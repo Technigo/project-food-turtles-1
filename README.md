@@ -8,7 +8,7 @@ Your page will be built based on a random combination of cuisine, city, and desi
 
 ## Your team's combination: Peruvian restaurants in New York
 
-Your team has been tasked with using the Zomato API to list Peruvian restaurants in New York
+Your team has been tasked with using the Zomato API to list Peruvian restaurants in New York in the style of the Online Pizza site:
 ![Online pizza](https://camo.githubusercontent.com/b72485a96a0e7cb1d5487342b2712593ce00f405/68747470733a2f2f692e696d6775722e636f6d2f435668337a69302e6a7067)
 
 ## How to complete this task
