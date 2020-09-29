@@ -1,33 +1,41 @@
-const zomatoApi = "https://developers.zomato.com/api/v2.1/search?city_id=280&cuisines=162";
 const apiKey = "0df34bb3167daea7d292823d2085aebd";
+const cityId = 280;
+const cuisineId = 162;
+let sort = "cost";
+sort = document.getElementById("sort-order").value;
+const order = "asc";
+const zomatoApi = `https://developers.zomato.com/api/v2.1/search?city_id=${cityId}&cuisines=${cuisineId}&sort=${sort}&order=${order}`;
 
-const restaurantContainer = document.getElementById('restaurantContainer');
+const restaurantContainer = document.getElementById("restaurantContainer");
 
 fetch(zomatoApi, { headers: { "user-key": apiKey } })
   .then((response) => {
     return response.json();
   })
-.then((newyork) => {
+  .then((newyork) => {
     console.log(newyork);
     console.log(newyork.restaurants[0].restaurant.name);
-        
-    // Loop each restaurants name, address and image from API fetch 
+
+    // Loop each restaurants name, address and image from API fetch
     newyork.restaurants.forEach((item) => {
-        const name = item.restaurant.name;
-        const address = item.restaurant.location.address;
-        const image = `<img src="${item.restaurant.thumb}"/>`;
-        const rating = item.restaurant.user_rating.rating_text;
-    
-    restaurantContainer.innerHTML += `${image}<h2>Name: ${name}</h2><p>Address: ${address}</p><p> Rating: ${rating}</p>`;
+      const imageUrl = item.restaurant.thumb;
+      if (imageUrl === "") {
+        imageURL =
+          "https://cdn.pixabay.com/photo/2014/09/17/20/26/restaurant-449952_960_720.jpg";
+      }
 
-    })
-  
-});
+      const name = item.restaurant.name;
+      const address = item.restaurant.location.address;
+      const image = `<img src="${imageUrl}"/>`;
+      const rating = item.restaurant.user_rating.rating_text;
+      const price = item.restaurant.average_cost_for_two;
+      const openingHours = item.restaurant.openingHours;
 
-
-
-
-/** The restaurant name
-* The average cost for a dinner there
-* The address of the restaurant
-* An image (you choose which image you'd like to display from the response)*/
+      restaurantContainer.innerHTML += `${image}
+              <h2>${name}</h2>
+              <p>Address: ${address}</p>
+              <p>Rating: ${rating}</p>
+              <p>Price for two: $${price}</p>
+              <p>Opening hours: ${openingHours}</p>`;
+    });
+  });
