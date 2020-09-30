@@ -29,12 +29,13 @@ fetch(zomatoApi, { headers: { "user-key": apiKey } })
       const rating = item.restaurant.user_rating.rating_text;
       const price = item.restaurant.average_cost_for_two;
       const openingHours = item.restaurant.timings;
+      const icon = `<img src="./icon.png" height="30px" width="20px"/>`;
       
-      restaurantContainer.innerHTML += `<div>${image}
+      restaurantContainer.innerHTML += `<div class="hej">${image}
               <h2>${name}</h2>
-              <p>Address: ${address}</p>
-              <p>Rating: ${rating}</p>
-              <p>Price for two: $${price}</p>
-              <p>Opening hours: ${openingHours}</p></div>`;
+              <div><p class="location">${icon}${address}</p></div>
+              <p class="text">Rating: ${rating}
+              <p class="text">Price for two: $${price}
+              <p class="text">Opening hours: ${openingHours}</p></div>`;
     });
   });
