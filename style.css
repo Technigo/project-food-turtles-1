@@ -30,14 +30,14 @@ h2{
     padding: 20px;
 }
 
-.hej{
+.eachrestaurant{
     display: flex;
     flex-direction: column;
     margin: 15px 15px;
     padding: 5px 5px;
 }
 
-.hej:hover{
+.eachrestaurant:hover{
     cursor: pointer;
     -webkit-transition: all .20s linear;
     -moz-transition: all .20s linear;

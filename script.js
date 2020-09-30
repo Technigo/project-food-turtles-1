@@ -31,7 +31,7 @@ fetch(zomatoApi, { headers: { "user-key": apiKey } })
       const openingHours = item.restaurant.timings;
       const icon = `<img src="./icon.png" height="30px" width="20px"/>`;
       
-      restaurantContainer.innerHTML += `<div class="hej">${image}
+      restaurantContainer.innerHTML += `<div class="eachrestaurant">${image}
               <h2>${name}</h2>
               <div><p class="location">${icon}${address}</p></div>
               <p class="text">Rating: ${rating}
