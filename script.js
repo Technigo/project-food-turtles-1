@@ -10,7 +10,6 @@ const choise = document.getElementById("sort-order");
 choise.addEventListener('click', () => {
     sort = choise.options[choise.selectedIndex].value;
     zomatoApi = `https://developers.zomato.com/api/v2.1/search?city_id=${cityId}&cuisines=${cuisineId}&sort=${sort}&order=${order}`;
-    console.log("url: " + zomatoApi);
     fetchApi(zomatoApi);
 });
 
@@ -22,20 +21,18 @@ const fetchApi = (url) => {
             return response.json();
         })
         .then((newyork) => {
-            console.log(newyork);
 
             // Loop each restaurants name, address and image from API fetch
             newyork.restaurants.forEach((item) => {
                 restaurantContainer.innerHTML += generateHTMLForRestaurants(item);
             });
         });
-    console.log("hejhej");
 };
 
 const generateHTMLForRestaurants = (item) => {
     let imageUrl = item.restaurant.thumb;
     if (imageUrl === "") {
-        imageUrl = "https://live.staticflickr.com/3185/3014198039_96f5e654ab_b.jpg";
+        imageUrl = "https://upload.wikimedia.org/wikipedia/commons/6/66/Xi%27an_Famous_Foods_Feast.jpg";
     }
 
     const name = `<h2>${item.restaurant.name}</h2>`;
