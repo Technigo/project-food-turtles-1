@@ -1,0 +1,39 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  
+body{
+    margin: 20px 20px;
+}
+
+h2{
+    font-weight: 500;
+}
+.restaurantContainer{
+    display: grid;
+    grid-template-columns: repeat(1, 4fr);
+    text-align: center;
+    padding: 40px;
+
+}
+
+/* Media queries for tablet screens - min width 668px */
+@media (min-width: 667px){
+    .restaurantContainer{
+        display: grid;
+        grid-template-columns: repeat(2, 2fr);
+        padding: 40px;
+    }
+}
+
+/* Desktop device */
+@media (min-width: 1025px) {
+    .restaurantContainer{
+        display: grid;
+        grid-template-columns: repeat(4, 4fr);
+    }
+}

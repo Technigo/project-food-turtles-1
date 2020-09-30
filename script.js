@@ -18,8 +18,7 @@ fetch(zomatoApi, { headers: { "user-key": apiKey } })
         const image = `<img src="${item.restaurant.thumb}"/>`;
         const rating = item.restaurant.user_rating.rating_text;
     
-    restaurantContainer.innerHTML += `${image}<h2>Name: ${name}</h2><p>Address: ${address}</p><p> Rating: ${rating}</p>`;
-
+    restaurantContainer.innerHTML += `<div>${image}<h2>${name}</h2><p>Rating: ${rating}</p><p>${address}</p></div>`;
     })
   
 });
