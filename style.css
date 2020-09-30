@@ -27,7 +27,7 @@ h2{
 .restaurantContainer{
     display: grid;
     grid-template-columns: repeat(1, 4fr);
-    padding: 20px;
+    padding: 5px;
 }
 
 .eachrestaurant{
@@ -35,6 +35,7 @@ h2{
     flex-direction: column;
     margin: 15px 15px;
     padding: 5px 5px;
+    width: 70%;
 }
 
 .eachrestaurant:hover{
@@ -47,16 +48,11 @@ h2{
     transform: scale(1.2);
 }
 
-.text{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    width: fit-content;
-}
-.location{
+.wrapper{
     display: flex;
     align-items: center;
+    justify-content: flex-start;
+    padding: 5px;
 }
 
 .filter-menu{
