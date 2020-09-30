@@ -14,7 +14,6 @@ fetch(zomatoApi, { headers: { "user-key": apiKey } })
   })
   .then((newyork) => {
     console.log(newyork);
-    console.log(newyork.restaurants[0].restaurant.name);
 
     // Loop each restaurants name, address and image from API fetch
     newyork.restaurants.forEach((item) => {
@@ -26,10 +25,10 @@ fetch(zomatoApi, { headers: { "user-key": apiKey } })
 
       const name = item.restaurant.name;
       const address = item.restaurant.location.address;
-      const image = `<img src="${imageUrl}"/>`;
+      const image = `<img src="${imageUrl}" height="200px" width="200px"/>`;
       const rating = item.restaurant.user_rating.rating_text;
       const price = item.restaurant.average_cost_for_two;
-      const openingHours = item.restaurant.openingHours;
+      const openingHours = item.restaurant.timings;
 
       restaurantContainer.innerHTML += `${image}
               <h2>${name}</h2>
